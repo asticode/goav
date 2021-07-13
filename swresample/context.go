@@ -29,7 +29,7 @@ func (s *Context) SwrAllocSetOpts(ocl int64, osf AvSampleFormat, osr int, icl in
 
 //Context destructor functions. Free the given Context and set the pointer to NULL.
 func (s *Context) SwrFree() {
-	C.swr_free((**C.struct_SwrContext)(unsafe.Pointer(s)))
+	C.swr_free((**C.struct_SwrContext)(unsafe.Pointer(&s)))
 }
 
 //Closes the context so that swr_is_initialized() returns 0.
